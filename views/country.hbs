@@ -1,0 +1,28 @@
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<div class="d-flex justify-content-between">
+    <h1>Actors</h1>
+    <div class="d-flex align-items-center">
+        <a href="/country/create" class="btn btn-success btn-sm">Create</a> 
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Country</th> 
+            <th></th>
+        </tr>
+    </thead>
+    {{#each country}}
+        <tr>
+            <td>{{this.country_id}}</td>
+            <td>{{this.country}}</td>
+            <td><a href="/country/{{this.country_id}}/edit" class="btn btn-primary btn-sm">Edit Country</a>
+        </tr>
+    {{/each}}
+</table>
+
+{{/block}}
+{{/extends}}
